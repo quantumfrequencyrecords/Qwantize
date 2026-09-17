@@ -1,0 +1,1 @@
+# Keep GitHub Pages from running Jekyll so hashed assets in docs/assets are served as-is.
