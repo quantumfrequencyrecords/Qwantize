@@ -4,7 +4,8 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  base: "/Qwantize/",
+  // Relative asset URLs so GitHub Pages works from repo root or /docs.
+  base: "./",
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
@@ -14,5 +15,8 @@ export default defineConfig({
   build: {
     outDir: "docs",
     emptyOutDir: false,
+    rollupOptions: {
+      input: fileURLToPath(new URL("./app.html", import.meta.url)),
+    },
   },
 });

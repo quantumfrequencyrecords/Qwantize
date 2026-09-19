@@ -17,21 +17,20 @@ This is **not a broker, signal service, or financial advisor**. You still make e
 
 ```bash
 npm install
-npm run dev
+npx vite --config vite.config.ts
 ```
 
-Open the URL Vite prints (usually `http://localhost:5173/Qwantize/`).
+The production site GitHub Pages serves is the built `index.html` at the **repository root** plus `assets/`. Do not replace that `index.html` with the Vite source file.
+
+Source HTML for rebuilds: [`app.html`](app.html).
 
 ## GitHub Pages
 
-The production static site is already in [`docs/`](docs/). Enable Pages:
+Pages must be: **Deploy from a branch** → `main` → **`/ (root)`**.
 
-1. Repo **Settings → Pages**
-2. Source: **Deploy from a branch**
-3. Branch: **main**, folder: **/docs**
-4. Save. Site: `https://quantumfrequencyrecords.github.io/Qwantize/`
+The live app loads `./assets/*.js`. A white screen means the unbuilt Vite HTML was served instead.
 
-Full steps, API keys, CORS, and verification: **[PRODUCTION.md](PRODUCTION.md)**
+Full steps: **[PRODUCTION.md](PRODUCTION.md)**
 
 ## Data
 
